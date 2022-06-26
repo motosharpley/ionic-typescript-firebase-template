@@ -1,0 +1,7 @@
+{
+  "name": "ion-blank",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

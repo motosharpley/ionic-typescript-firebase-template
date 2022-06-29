@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { IonPage, IonToolbar, IonRange, IonContent } from '@ionic/react';
-import ExploreContainer from './ExploreContainer';
 
 const VideoPlayer = () => {
   const [videoSrc, setVideoSrc] = useState('./assets/devpath.mp4');
@@ -30,6 +29,7 @@ const VideoPlayer = () => {
     });
 
     console.log('vidData.currentTime: ', vidData.currentTime);
+    // useEffect return function runs when component unmounts
     return () => {
       video.removeEventListener('loadedmetadata', (e) => {
         setVidData({
@@ -48,7 +48,6 @@ const VideoPlayer = () => {
 
   return (
     <IonPage>
-      <ExploreContainer />
       <video id="video" controls preload="metadata" src={videoSrc}></video>
       <p>Current Time: {currentTime}</p>
       <IonRange

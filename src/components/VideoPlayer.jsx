@@ -12,7 +12,9 @@ const VideoPlayer = () => {
 
   useEffect(() => {
     const video = document.getElementById('video');
-    video.currentTime = vidData.currentTime;
+    if (video.currentTime !== vidData.currentTime) {
+      video.currentTime = vidData.currentTime;
+    }
 
     video.addEventListener('loadedmetadata', (e) => {
       setVidData({
@@ -28,30 +30,41 @@ const VideoPlayer = () => {
     });
 
     console.log('vidData.currentTime: ', vidData.currentTime);
-    return () => {};
+    return () => {
+      video.removeEventListener('loadedmetadata', (e) => {
+        setVidData({
+          currentTime: video.currentTime,
+          duration: video.duration,
+        });
+        video.removeEventListener('timeupdate', (e) => {
+          setVidData({
+            currentTime: video.currentTime,
+            duration: video.duration,
+          });
+        });
+      });
+    };
   }, [vidData.currentTime, vidData.duration]);
 
   return (
     <IonPage>
       <ExploreContainer />
-      <IonContent>
-        <video id="video" controls preload="metadata" src={videoSrc}></video>
-        <p>Current Time: {currentTime}</p>
-        <IonRange
-          dualKnobs={true}
-          value={{
-            lower: currentTime,
-            upper: duration,
-          }}
-          onIonChange={(e) =>
-            setVidData({
-              currentTime: e.detail.value.lower,
-              duration: duration,
-            })
-          }
-          max={duration}
-        ></IonRange>
-      </IonContent>
+      <video id="video" controls preload="metadata" src={videoSrc}></video>
+      <p>Current Time: {currentTime}</p>
+      <IonRange
+        dualKnobs={true}
+        value={{
+          lower: vidData.currentTime,
+          upper: vidData.duration,
+        }}
+        onIonKnobMoveEnd={(e) =>
+          setVidData({
+            currentTime: e.detail.value.lower,
+            duration: duration,
+          })
+        }
+        max={duration}
+      ></IonRange>
     </IonPage>
   );
 };

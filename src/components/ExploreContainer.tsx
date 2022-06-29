@@ -45,7 +45,9 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           <IonIcon slot="icon-only" icon={personCircle} />
         </IonButton>
         <IonButton>
-          <IonIcon slot="icon-only" icon={ellipsisVertical} />
+          <Link to="/tube">
+            <IonIcon slot="icon-only" icon={ellipsisVertical} />
+          </Link>
         </IonButton>
       </IonButtons>
       <IonSearchbar

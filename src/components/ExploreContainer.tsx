@@ -12,8 +12,10 @@ import {
   ellipsisHorizontal,
   ellipsisVertical,
   heart,
+  camera,
 } from 'ionicons/icons';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 import './ExploreContainer.css';
 
@@ -22,13 +24,21 @@ interface ContainerProps {}
 const ExploreContainer: React.FC<ContainerProps> = () => {
   const [searchText, setSearchText] = useState('');
 
+  const history = useHistory();
+
+  useEffect(() => {
+    console.log(searchText);
+  }, [searchText]);
+
   return (
     <IonToolbar>
       <IonButtons slot="secondary">
         <IonButton>
-          <IonIcon slot="icon-only" icon={star} />
+          <Link to="/watch">
+            <IonIcon slot="icon-only" icon={camera} />
+          </Link>
         </IonButton>
-        <IonButton>
+        <IonButton onClick={() => history.push('/')}>
           <IonIcon slot="icon-only" icon={heart} />
         </IonButton>
         <IonButton>
@@ -44,8 +54,6 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
         animated
         showClearButton="always"
         color="dark"
-        inputMode="search"
-        type="search"
         slot="start"
       ></IonSearchbar>
     </IonToolbar>

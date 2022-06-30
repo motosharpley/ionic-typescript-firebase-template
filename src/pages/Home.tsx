@@ -12,11 +12,9 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Header</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <div className="homeContainer">
+          <h2>Welcome Home</h2>
+        </div>
       </IonContent>
     </IonPage>
   );

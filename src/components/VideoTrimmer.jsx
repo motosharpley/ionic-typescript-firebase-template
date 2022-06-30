@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { IonPage, IonToolbar, IonRange, IonContent } from '@ionic/react';
+import './VideoTrimmer.css';
 
-const VideoPlayer = () => {
+const VideoTrimmer = () => {
   const [videoSrc, setVideoSrc] = useState('./assets/devpath.mp4');
   const [vidData, setVidData] = useState({
     currentTime: 0,
@@ -68,4 +69,4 @@ const VideoPlayer = () => {
   );
 };
 
-export default VideoPlayer;
+export default VideoTrimmer;

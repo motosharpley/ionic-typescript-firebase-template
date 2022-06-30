@@ -13,6 +13,9 @@ import {
   ellipsisVertical,
   heart,
   camera,
+  play,
+  homeSharp,
+  videocamSharp,
 } from 'ionicons/icons';
 import { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
@@ -35,18 +38,20 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
       <IonButtons slot="secondary">
         <IonButton>
           <Link to="/watch">
-            <IonIcon slot="icon-only" icon={camera} />
+            <IonIcon slot="icon-only" icon={videocamSharp} />
           </Link>
         </IonButton>
         <IonButton onClick={() => history.push('/')}>
-          <IonIcon slot="icon-only" icon={heart} />
+          <IonIcon slot="icon-only" icon={homeSharp} />
         </IonButton>
         <IonButton>
-          <IonIcon slot="icon-only" icon={personCircle} />
+          <Link to="/social-share">
+            <IonIcon slot="icon-only" icon={personCircle} />
+          </Link>
         </IonButton>
         <IonButton>
           <Link to="/tube">
-            <IonIcon slot="icon-only" icon={ellipsisVertical} />
+            <IonIcon slot="icon-only" icon={play} />
           </Link>
         </IonButton>
       </IonButtons>

@@ -1,0 +1,11 @@
+#c2 {
+  background-image: url(../../public/assets/icon/favicon.png);
+  background-repeat: no-repeat;
+}
+div {
+  float: left;
+  border: 1px solid #444444;
+  padding: 10px;
+  margin: 10px;
+  background: #3b3b3b;
+}

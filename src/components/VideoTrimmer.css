@@ -1,3 +1,7 @@
 video {
   max-width: 1000px;
 }
+
+.trim-container {
+  max-width: 1000px;
+}

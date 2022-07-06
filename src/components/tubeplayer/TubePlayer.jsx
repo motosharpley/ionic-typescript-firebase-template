@@ -252,7 +252,7 @@ const TubePlayer = () => {
   };
 
   return (
-    <IonPage>
+    <>
       <div className="video-container paused" data-volume-level="high">
         <img className="thumbnail-img" />
         <div className="video-controls-container">
@@ -358,7 +358,7 @@ const TubePlayer = () => {
           <track kind="captions" srcLang="en" src="assets/subtitles.vtt" />
         </video>
       </div>
-    </IonPage>
+    </>
   );
 };
 

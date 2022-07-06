@@ -4,6 +4,7 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
+  IonHeader,
 } from '@ionic/react';
 import {
   personCircle,
@@ -37,7 +38,7 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
     <IonToolbar>
       <IonButtons slot="secondary">
         <IonButton>
-          <Link to="/watch">
+          <Link to="/create">
             <IonIcon slot="icon-only" icon={videocamSharp} />
           </Link>
         </IonButton>
@@ -45,12 +46,12 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
           <IonIcon slot="icon-only" icon={homeSharp} />
         </IonButton>
         <IonButton>
-          <Link to="/social-share">
+          <Link to="/profile">
             <IonIcon slot="icon-only" icon={personCircle} />
           </Link>
         </IonButton>
         <IonButton>
-          <Link to="/tube">
+          <Link to="/watch">
             <IonIcon slot="icon-only" icon={play} />
           </Link>
         </IonButton>

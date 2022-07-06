@@ -1,9 +1,8 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import Create from './pages/Create';
 import Home from './pages/Home';
-import VideoTrimmer from './components/VideoTrimmer';
-import TubePlayer from './components/tubeplayer/TubePlayer';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,7 +23,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import ExploreContainer from './components/ExploreContainer';
-import { SocialShareFab } from './components/SocialShareFab';
+import Watch from './pages/Watch';
 
 setupIonicReact();
 
@@ -33,13 +32,10 @@ const App: React.FC = () => (
     <IonReactRouter>
       <ExploreContainer />
       <IonRouterOutlet>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/watch" component={VideoTrimmer} />
-        <Route path="/tube" component={TubePlayer} />
-        <Route path="/social-share" component={SocialShareFab} />
+        <Route exact path="/" component={Home} />
+
+        <Route path="/create" component={Create} />
+        <Route path="/watch" component={Watch} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

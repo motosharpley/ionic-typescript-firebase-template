@@ -1,7 +1,8 @@
 import { IonContent, IonPage } from '@ionic/react';
-import './Home.css';
+import VideoTrimmer from '../components/VideoTrimmer';
+import './Create.css';
 
-const Home = () => {
+const Create = () => {
   let preview = document.getElementById('preview');
   let recording = document.getElementById('recording');
   let startButton = document.getElementById('startButton');
@@ -59,7 +60,7 @@ const Home = () => {
               preview.captureStream || preview.mozCaptureStream;
             return new Promise((resolve) => (preview.onplaying = resolve));
           })
-          .then(() => startRecording(preview.captureStream(), recordingTimeMS))
+          .then(() => startRecording(preview.captureStream(), recordingTimeMS)) //record the preview element media stream
           .then((recordedChunks) => {
             let recordedBlob = new Blob(recordedChunks, { type: 'video/webm' }); //upload to firestore from blob
             recording.src = URL.createObjectURL(recordedBlob);
@@ -100,16 +101,8 @@ const Home = () => {
     <IonPage>
       <IonContent fullscreen>
         <div className="homeContainer">
-          <h2>Home</h2>
+          <h2>Create</h2>
         </div>
-        <p>
-          Click the "Start Recording" button to begin video recording for a few
-          seconds.
-        </p>
-        <p>
-          The "Download" button will download the received data (in raw,
-          unwrapped form)
-        </p>
         <div className="left">
           <div id="startButton" className="button">
             Start Recording
@@ -131,8 +124,9 @@ const Home = () => {
         <div className="bottom">
           <pre id="log"></pre>
         </div>
+        <VideoTrimmer></VideoTrimmer>
       </IonContent>
     </IonPage>
   );
 };
-export default Home;
+export default Create;

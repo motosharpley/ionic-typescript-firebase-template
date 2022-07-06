@@ -48,26 +48,24 @@ const VideoTrimmer = () => {
   }, [vidData.currentTime, vidData.duration]);
 
   return (
-    <IonPage>
-      <div className="trim-container">
-        <video id="video" controls preload="metadata" src={videoSrc}></video>
-        <p>Current Time: {currentTime}</p>
-        <IonRange
-          dualKnobs={true}
-          value={{
-            lower: vidData.currentTime,
-            upper: vidData.duration,
-          }}
-          onIonKnobMoveEnd={(e) =>
-            setVidData({
-              currentTime: e.detail.value.lower,
-              duration: duration,
-            })
-          }
-          max={duration}
-        ></IonRange>
-      </div>
-    </IonPage>
+    <div className="trim-container">
+      <video id="video" controls preload="metadata" src={videoSrc}></video>
+      <p>Current Time: {currentTime}</p>
+      <IonRange
+        dualKnobs={true}
+        value={{
+          lower: vidData.currentTime,
+          upper: vidData.duration,
+        }}
+        onIonKnobMoveEnd={(e) =>
+          setVidData({
+            currentTime: e.detail.value.lower,
+            duration: duration,
+          })
+        }
+        max={duration}
+      ></IonRange>
+    </div>
   );
 };
 

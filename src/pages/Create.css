@@ -1,14 +1,6 @@
 h2 {
   padding-top: 40px;
 }
-body {
-  padding: 0;
-  margin: 0;
-}
-
-svg:not(:root) {
-  display: block;
-}
 
 .playable-code {
   background-color: #f4f7f8;
@@ -62,14 +54,14 @@ h2 {
 .left {
   margin-right: 10px;
   float: left;
-  width: 160px;
+  width: 468;
   padding: 0px;
 }
 
 .right {
   margin-left: 10px;
   float: left;
-  width: 160px;
+  width: 468;
   padding: 0px;
 }
 

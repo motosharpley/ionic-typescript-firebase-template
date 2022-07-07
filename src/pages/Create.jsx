@@ -103,12 +103,18 @@ const Create = () => {
         <div className="homeContainer">
           <h2>Create</h2>
         </div>
+        <select name="media-src" id="media-src">
+          <option value="camera">Camera</option>
+          <option value="file">File</option>
+          <option value="gallery">Gallery</option>
+        </select>
+        <hr />
         <div className="left">
           <div id="startButton" className="button">
             Start Recording
           </div>
           <h2>Preview</h2>
-          <video id="preview" width="160" height="120" autoPlay muted></video>
+          <video id="preview" width="468" height="240" autoPlay muted></video>
         </div>
 
         <div className="right">
@@ -116,7 +122,7 @@ const Create = () => {
             Stop Recording
           </div>
           <h2>Recording</h2>
-          <video id="recording" width="160" height="120" controls></video>
+          <video id="recording" width="468" height="240" controls></video>
           <a id="downloadButton" className="button" href="/">
             Download
           </a>

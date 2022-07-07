@@ -16,6 +16,7 @@ body {
   justify-content: center;
   margin-inline: auto;
   background-color: black;
+  margin-top: 76px;
 }
 
 .video-container.theater,

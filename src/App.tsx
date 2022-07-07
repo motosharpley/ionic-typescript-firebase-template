@@ -3,6 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Create from './pages/Create';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,6 +34,7 @@ const App: React.FC = () => (
       <ExploreContainer />
       <IonRouterOutlet>
         <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
 
         <Route path="/create" component={Create} />
         <Route path="/watch" component={Watch} />

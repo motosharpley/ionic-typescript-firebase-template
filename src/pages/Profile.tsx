@@ -9,6 +9,10 @@ const Profile: React.FC = () => {
         <div>
           <h2>Profile</h2>
           <h3>{displayName}</h3>
+          <p>Favorites</p>
+          <p>Subscriptions</p>
+          <p>My Gallery</p>
+          <button>Logout</button>
         </div>
       </IonContent>
     </IonPage>

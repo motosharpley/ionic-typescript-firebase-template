@@ -5,13 +5,16 @@ import './VideoTrimmer.css';
 const VideoTrimmer = () => {
   const [videoSrc, setVideoSrc] = useState('./assets/devpath.mp4');
   const [vidData, setVidData] = useState({
-    currentTime: 0,
+    currentTime: 3,
     duration: 0,
   });
   const { currentTime, duration } = vidData;
 
   useEffect(() => {
     const video = document.getElementById('video');
+    const stream = video.captureStream();
+    const recorder = new MediaRecorder(stream);
+    console.log(recorder);
     if (video.currentTime !== vidData.currentTime) {
       video.currentTime = vidData.currentTime;
     }
